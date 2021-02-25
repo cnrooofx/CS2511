@@ -1,24 +1,29 @@
-var myDiv = null;
+var selectedDiv = null;
 var hOffset, vOffset = 0;
 
 window.addEventListener('DOMContentLoaded', setupEvents, false);
 
 function setupEvents() {
-    myDiv = document.getElementById('div0');
-    myDiv.addEventListener('mousedown', startDrag, false);
+    var allDivs = document.getElementsByTagName('div')
+    for (var i = 0; i < allDivs.length; i++) {
+        allDivs[i].addEventListener('mousedown', startDrag, false);
+    }
 }
 
 function startDrag(event) {
     document.addEventListener('mousemove', dragDiv, false);
     document.addEventListener('mouseup', stopDrag, false);
-    hOffset = parseInt(event.clientX) - parseInt(myDiv.style.left);
-    vOffset = parseInt(event.clientY) - parseInt(myDiv.style.top);
+    selectedDiv = event.target;
+
+    // hOffset = parseInt(event.clientX) - parseInt(selectedDiv.style.left);
+    // vOffset = parseInt(event.clientY) - parseInt(selectedDiv.style.top);
+
     return false;
 }
 
 function dragDiv(event) {
-    myDiv.style.left = (parseInt(event.clientX) - hOffset) + 'px';
-    myDiv.style.top = (parseInt(event.clientY) - vOffset) + 'px';
+    selectedDiv.style.left = (parseInt(event.clientX)) + 'px';
+    selectedDiv.style.top = (parseInt(event.clientY)) + 'px';
     return false;
 }
 
