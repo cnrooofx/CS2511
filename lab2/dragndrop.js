@@ -14,8 +14,8 @@ function startDrag() {
 }
 
 function dragDiv(event) {
-    myDiv.style.left = parseInt(evt.clientX) + 'px';
-    myDiv.style.top = parseInt(evt.clientY) + 'px';
+    myDiv.style.left = parseInt(event.clientX) + 'px';
+    myDiv.style.top = parseInt(event.clientY) + 'px';
     return false;
 }
 
