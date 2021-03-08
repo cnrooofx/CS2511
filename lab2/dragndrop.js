@@ -18,14 +18,28 @@ function startDrag(event) {
     selectedDiv = event.target;
     selectedDiv.style.zIndex = 1;
 
-    // hOffset = parseInt(event.clientX) - parseInt(selectedDiv.style.left);
-    // vOffset = parseInt(event.clientY) - parseInt(selectedDiv.style.top);
+    var left = parseInt(selectedDiv.style.left);
+    var top = parseInt(selectedDiv.style.top);
+
+    console.log(event);
+    console.log(top);
+
+    if (isNaN(left)) {
+        hOffset = 0
+    } else {
+        hOffset = (parseInt(event.clientX) - left);
+    }
+    if (isNaN(top)) {
+        vOffset = 0
+    } else {
+        vOffset = (parseInt(event.clientY) - top);
+    }
     return false;
 }
 
 function dragDiv(event) {
-    selectedDiv.style.left = (parseInt(event.clientX)) + 'px';
-    selectedDiv.style.top = (parseInt(event.clientY)) + 'px';
+    selectedDiv.style.left = (parseInt(event.clientX) - hOffset) + 'px';
+    selectedDiv.style.top = (parseInt(event.clientY) - vOffset) + 'px';
     return false;
 }
 
