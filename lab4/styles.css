@@ -1,0 +1,13 @@
+#dragImage {
+    width: 100px;
+    height: 100px;
+}
+
+#target {
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
