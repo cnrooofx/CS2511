@@ -1,0 +1,9 @@
+img, div {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+}
+
+.dropZone {
+    background-color: gray; 
+}
