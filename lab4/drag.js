@@ -15,11 +15,14 @@ function setupEvents() {
         target.addEventListener("dragenter", dragEnter, false);
         target.addEventListener("dragover", dragOver, false);
         target.addEventListener("dragleave", dragLeave, false);
+        target.addEventListener("drop", dropIcon, false);
     }
 }
 
-function dragStart() {
+function dragStart(event) {
     icon.style.opacity = 0.5;
+
+    event.dataTransfer.setData("ID", event.target.id);
 }
 
 function dragEnd() {
@@ -38,4 +41,11 @@ function dragOver(event) {
 function dragLeave(event) {
     target = event.target;
     target.style.backgroundColor = "gray";
+}
+
+function dropIcon(event) {
+    event.preventDefault();
+
+    var id = event.dataTransfer.getData("ID");
+    event.target.appendChild(document.getElementById(id));
 }
