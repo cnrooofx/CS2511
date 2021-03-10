@@ -19,9 +19,23 @@ function setupEvents() {
 }
 
 function dragStart() {
-    icon.style.borderStyle = "solid";
+    icon.style.opacity = 0.5;
 }
 
 function dragEnd() {
-    icon.style.borderStyle = "none";
+    icon.style.opacity = 1;
+}
+
+function dragEnter(event) {
+    target = event.target;
+    target.style.backgroundColor = "yellow";
+}
+
+function dragOver(event) {
+    event.preventDefault();
+}
+
+function dragLeave(event) {
+    target = event.target;
+    target.style.backgroundColor = "gray";
 }
