@@ -1,13 +1,9 @@
-#dragImage {
+img, div {
     width: 100px;
     height: 100px;
+    margin: 15px;
 }
 
-#target {
-    background-color: gray;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 250px;
-    left: 250px;
+.dropZone {
+    background-color: gray; 
 }
