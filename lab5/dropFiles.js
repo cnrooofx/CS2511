@@ -36,12 +36,12 @@ function dropFile(event) {
     event.preventDefault();
     target.style.backgroundColor = "lightgray";
 
-    var files_info = document.getElementById("displayArea").value
+    var files_info = ""
     var files_list = event.dataTransfer.files;
 
     for (let i = 0; i < files_list.length; i++) {
-        var file = files_list[i]
-        files_info += file.name + " - Size: " + file.size + " bytes | Type: " + file.type + "\n"
+        var file = files_list[i];
+        files_info += file.name + " - Size: " + file.size + " bytes | Type: " + file.type + "\n";
     }
-    document.getElementById("displayArea").value = files_info
+    document.getElementById("displayArea").value = files_info;
 }

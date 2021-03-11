@@ -1,18 +1,14 @@
 div, textarea {
-    width: 95%;
-    height: 100px;
+    background-color: lightgrey;
     border: 5px dashed black;
     border-radius: 1em;
+    font-size: 2em;
+    height: 100px;
     margin: 25px;
-    background-color: lightgrey;
+    width: 95%;
 }
 
 #dropArea {
-    text-align: center;
-    font-size: 2em;
     font-family: sans-serif;
-}
-
-#textArea {
-    height: 300px;
+    text-align: center;
 }
