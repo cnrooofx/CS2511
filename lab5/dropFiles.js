@@ -9,7 +9,7 @@ function setupEvents() {
         target.addEventListener("dragover", dragOver, false);
         target.addEventListener("dragleave", dragLeave, false);
         target.addEventListener("drop", dropFile, false);
-    } else  {
+    } else {
         alert("HTML 5 File API not supported");
     }
 }
@@ -36,12 +36,26 @@ function dropFile(event) {
     event.preventDefault();
     target.style.backgroundColor = "lightgray";
 
-    var files_info = ""
-    var files_list = event.dataTransfer.files;
+    var files = event.dataTransfer.files;
+    if (files.length > 0) {
+        handleFiles(files);
+    }
+}
 
+function handleFiles(files_list) {
+    var files_info = ""
     for (let i = 0; i < files_list.length; i++) {
         var file = files_list[i];
         files_info += file.name + " - Size: " + file.size + " bytes | Type: " + file.type + "\n";
     }
-    document.getElementById("displayArea").value = files_info;
+    document.getElementById("infoArea").value = files_info;
+
+    var reader = new FileReader();
+    reader.addEventListener("load", handleReaderLoad, false);
+    reader.readAsDataURL(files_list[0]);
+}
+
+function handleReaderLoad(event) {
+    let displayArea = document.getElementById("displayArea");
+    displayArea.src = event.target.result;
 }
