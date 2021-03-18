@@ -9,6 +9,6 @@ Drag and Drop with JavaScript
 
 Intro to HTML5 Drag and Drop API
 
-## Lab 5
+## Lab 5 & 6
 
-HTML5 Drag and Drop of external files onto page
+HTML5 Drag and Drop of external files onto page, get file sizes, and display images on the page.
