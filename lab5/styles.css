@@ -1,0 +1,14 @@
+div, textarea {
+    background-color: lightgrey;
+    border: 5px dashed black;
+    border-radius: 1em;
+    font-size: 2em;
+    height: 100px;
+    margin: 25px;
+    width: 95%;
+}
+
+#dropArea {
+    font-family: sans-serif;
+    text-align: center;
+}
