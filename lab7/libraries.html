@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-ie">
+    <head>
+        <title>JavaScript Libraries</title>
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript">
+            function showValue(sliderSetting) {
+                document.getElementById("textBox").value = sliderSetting;
+            }
+        </script>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <input type="range" min="20" max="80" value="60" onchange="showValue(this.value)" />
+        <input type="text" id="textBox" />
+    </body>
+</html>
