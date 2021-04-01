@@ -1,4 +1,6 @@
+let menuDiv = null;
 let popupMenu = null;
+let menuVisible = false;
 
 window.addEventListener("DOMContentLoaded", setup, false);
 
@@ -7,12 +9,13 @@ function setup() {
 }
 
 function createMenu(event) {
-    if (! popupMenu) {
-        let menuDiv = document.createElement("div");
+    if (! menuDiv) {
+        menuDiv = document.createElement("div");
         menuDiv.id = "menuDiv";
         menuDiv.style.height = "100px";
         menuDiv.style.width = "100px";
-
+    }
+    if (! menuVisible) {
         let divWidth = parseInt(menuDiv.style.width);
         let divHeight = parseInt(menuDiv.style.height);
 
@@ -21,6 +24,8 @@ function createMenu(event) {
 
         popupMenu = document.documentElement.appendChild(menuDiv);
         popupMenu.addEventListener("click", closeMenu, false);
+
+        menuVisible = true;
     }
 }
 
@@ -29,5 +34,5 @@ function closeMenu(event) {
     event.stopPropagation();
 
     document.documentElement.removeChild(popupMenu);
-    popupMenu = null;
+    menuVisible = false;
 }
