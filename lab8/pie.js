@@ -6,19 +6,28 @@ function setup() {
     document.addEventListener("click", createMenu, false);
 }
 
-function createMenu() {
+function createMenu(event) {
     if (! popupMenu) {
-        // Div created in memory but not attached to node tree.
         let menuDiv = document.createElement("div");
+        menuDiv.id = "menuDiv";
+        menuDiv.style.height = "100px";
+        menuDiv.style.width = "100px";
 
-        menuDiv.style.position = "absolute";
-        menuDiv.style.top = "50px";
-        menuDiv.style.left = "100px";
-        menuDiv.style.width = "200px";
-        menuDiv.style.height = "200px";
-        menuDiv.style.borderRadius = "100px";
-        menuDiv.style.backgroundColor = "gray";
+        let divWidth = parseInt(menuDiv.style.width);
+        let divHeight = parseInt(menuDiv.style.height);
+
+        menuDiv.style.top = (parseInt(event.clientY) - divWidth / 2) + "px";
+        menuDiv.style.left = (parseInt(event.clientX) - divHeight / 2) + "px";
 
         popupMenu = document.documentElement.appendChild(menuDiv);
+        popupMenu.addEventListener("click", closeMenu, false);
     }
+}
+
+function closeMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    document.documentElement.removeChild(popupMenu);
+    popupMenu = null;
 }
