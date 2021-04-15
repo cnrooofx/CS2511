@@ -1,8 +1,18 @@
 
 #menuDiv {
     background-color: gray;
+    border: 0.15em solid black;
     border-radius: 4em;
-    height: 100px;
     position: absolute;
-    width: 100px;
+}
+
+.iconDiv {
+    background-color: white;
+    border: 0.15em solid black;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.iconDiv:hover {
+    background-color: skyblue;
 }
