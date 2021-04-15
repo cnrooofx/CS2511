@@ -14,9 +14,7 @@ html {
     background-color: white;
     border: 0.15em solid black;
     border-radius: 10px;
+    font: lighter;
     position: absolute;
-}
-
-.iconDiv:hover {
-    background-color: skyblue;
+    text-align: center;
 }
