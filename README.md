@@ -1,4 +1,5 @@
 # CS2511
+
 Usability Engineering
 
 ## Lab 2 & 3
@@ -20,3 +21,7 @@ Introduction to JQuery widgets
 ## Lab 8
 
 Pie Menu using Dynamic HTML
+
+## Lab 9
+
+Extend Pie Menu to be controlled with mouse gestures.
